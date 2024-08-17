@@ -4,6 +4,7 @@
  */
 pub use crate::Cost;
 pub use int_math::VectorU;
+use std::fmt::{Display, Formatter};
 
 /// The `Grid` struct represents a 2D grid used in an [A* search algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm).
 /// Each cell in the grid has an associated cost, which can be used to
@@ -14,6 +15,25 @@ pub struct Grid {
     /// A flat vector storing the cost of each cell in the grid.
     /// The vector is indexed based on a 1D representation of the 2D grid.
     cells: Vec<Cost>,
+}
+
+impl Display for Grid {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        for y in 0..self.size.y {
+            writeln!(f)?;
+            for x in 0..self.size.x {
+                let index = (y * self.size.x + x) as usize;
+
+                let cost = self.cells[index];
+
+                let prefix = if cost <= 127 { "\x1b[32m" } else { "\x1b[91m" };
+
+                write!(f, "{}{:02X}\x1b[0m", prefix, self.cells[index])?;
+            }
+        }
+
+        Ok(())
+    }
 }
 
 impl Grid {
