@@ -1,0 +1,11 @@
+[package]
+name = "stara"
+version = "0.0.3"
+edition = "2021"
+license = "MIT"
+description = "A* Search Algorithm"
+repository = "https://github.com/piot/stara-rs"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+int_math = "0.0.1"
