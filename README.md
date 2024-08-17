@@ -9,7 +9,7 @@ Add the following to your `Cargo.toml` under `[dependencies]` to use it in your 
 
 ```toml
 [dependencies]
-stara = "0.0.2"
+stara = "0.0.3"
 ```
 
 ## Usage
