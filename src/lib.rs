@@ -8,6 +8,9 @@ mod test;
 
 pub mod grid;
 mod node;
+pub mod bresenham;
+pub mod los;
+
 use node::Node;
 
 use crate::grid::Grid;
