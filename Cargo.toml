@@ -9,3 +9,6 @@ repository = "https://github.com/piot/stara-rs"
 
 [dependencies]
 int_math = "0.0.1"
+
+[dev-dependencies]
+log = "0.4.22"

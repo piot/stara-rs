@@ -6,10 +6,11 @@ pub mod prelude;
 #[cfg(test)]
 mod test;
 
-pub mod grid;
-mod node;
 pub mod bresenham;
+pub mod grid;
 pub mod los;
+mod node;
+pub mod reduce;
 
 use node::Node;
 
